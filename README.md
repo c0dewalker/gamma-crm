@@ -1,6 +1,7 @@
 ## **Gamma CRM:** A Customer Relationship Management System
 
-
+<br />
+<br />
 <img width="1275" alt="Screenshot 2020-08-26 at 16 54 52" src="https://user-images.githubusercontent.com/63851100/91321716-34deae00-e7bf-11ea-9170-94ca2182526f.png">
 
 ## Functionality: 
