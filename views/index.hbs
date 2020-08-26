@@ -1,0 +1,255 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/profile/{{id}}">
+        <strong>{{name}}</strong>
+      </a>
+
+      <a class="navbar-item" href="auth/logout">
+        <strong>Выход</strong>
+      </a>
+      <form action="/search" method="POST">
+        <div class="navbar-item">
+          <p class="control has-icons-left has-text-grey-darker is-narrow">
+            <input class="input has-text-grey-darker is-small is-narrow" name="nameSearch" type="text" placeholder="Поиск по имени">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+        </div>
+
+        <div class="navbar-item">
+          <p class="control has-icons-left has-text-grey-darker is-narrow">
+            <input class="input has-text-grey-darker is-small" name="dateFromSearch" type="text" placeholder="Дата от">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="control has-icons-left has-text-grey-darker is-narrow">
+            <input class="input has-text-grey-darker is-small" name="dateToSearch" type="text" placeholder="Дата до">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+          <div class="field is-grouped">
+            <div class="buttons">
+              <button type="submit" class="button is-small has-background-primary">
+                <strong>Искать</strong>
+              </button>
+              <a href="/" class="button is-small has-background-primary">
+                <strong>Сбросить</strong>
+              </a>
+            </div>
+          </div>
+      </form>
+
+    </div>
+    <a class="navbar-item">{{options.num}} сделки: {{options.sum}} руб.</a>
+  </div>
+
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+        <a href="/new" class="button is-small has-background-primary">
+          <strong>+ Новая сделка</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+
+
+<div class="columns scrolling-wrapper-flexbox">
+
+
+  <div class="column has-text-centered is-300px">
+    <a class="subtitle">
+      НЕРАЗОБРАННОЕ
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[1]}} сделки, {{options.sums.[1]}} руб.
+    </a>
+
+
+    {{#if options.sortedContacts.[1].length}}
+    {{#each options.sortedContacts.[1]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+
+  <div id="col2" class="column has-text-centered is-300px">
+    <a class="subtitle">
+      ПЕРВИЧНЫЙ КОНТАКТ
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[2]}} сделки, {{options.sums.[2]}} руб.
+    </a>
+    {{#if options.sortedContacts.[2].length}}
+    {{#each options.sortedContacts.[2]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+
+  <div id="col3" class="column has-text-centered is-300px">
+    <a class="subtitle">
+      НАЗНАЧЕНА ВСТРЕЧА
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[3]}} сделки, {{options.sums.[3]}} руб.
+    </a>
+    {{#if options.sortedContacts.[3].length}}
+    {{#each options.sortedContacts.[3]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+  <div id="col4" class="column has-text-centered is-300px">
+    <a class="subtitle">
+      ВСТРЕЧА НЕ СОСТОЯЛАСЬ
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[4]}} сделки, {{options.sums.[4]}} руб.
+    </a>
+    {{#if options.sortedContacts.[4].length}}
+    {{#each options.sortedContacts.[4]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+
+  <div id="col5" class="column has-text-centered is-300px">
+    <a class="subtitle">
+      ПЕРЕГОВОРЫ
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[5]}} сделки, {{options.sums.[5]}} руб.
+    </a>
+    {{#if options.sortedContacts.[5].length}}
+    {{#each options.sortedContacts.[5]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+
+
+
+  <div id="col6" class="column has-text-centered is-300px">
+    <a class="subtitle">
+      ПРИНИМАЮТ РЕШЕНИЕ
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[6]}} сделки, {{options.sums.[6]}} руб.
+    </a>
+    {{#if options.sortedContacts.[6].length}}
+    {{#each options.sortedContacts.[6]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+
+
+  <div id="col7" class="column has-text-centered is-300px">
+    <a class="subtitle">
+      СОГЛАСОВАНИЕ ДОГОВОРА
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[7]}} сделки, {{options.sums.[7]}} руб.
+    </a>
+    {{#if options.sortedContacts.[7].length}}
+    {{#each options.sortedContacts.[7]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+
+
+  <div id="col8" class="column has-text-centered is-300px">
+    <a class="subtitle">
+      ЗАВЕРШЕННЫЕ
+    </a><br>
+    <a class="title is-6">
+      {{options.counts.[8]}} сделки, {{options.sums.[8]}} руб.
+    </a>
+    {{#if options.sortedContacts.[8].length}}
+    {{#each options.sortedContacts.[8]}}
+    <div class="card mt-3 mx-1">
+      <div class="is-zero-padding">
+        <p class="is-size-7 has-text-right">{{date}}</p>
+        <p class="has-text-weight-semibold has-text-info has-text-left is-size-6">{{name}}</p>
+        <p class="has-text-left is-size-6">{{budget}}</p>
+        <p class="has-text-even is-size-6 is-narrow">{{manager}}
+          <a href="edit/{{_id}}" class="is-size-7">открыть</a>
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+</div>

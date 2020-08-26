@@ -1,0 +1,70 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="container">
+      <div class="column">
+        <div class="box">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">{{name}}</label>
+            </div>
+          </div>
+          <form action="/import" method="POST" enctype="multipart/form-data">
+            <div class="field is-horizontal">
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="file" name="import">
+                  </div>
+                </div>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <button type="submit" class="button is-link">Импорт базы данных</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="field is-horizontal">
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <a href="/import" class="button is-link">Экспорт базы данных</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <a href="/auth/newManager" value="Создать менеджера" class="button is-link">Создать менеджера</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <a href="/auth/passChange" class="button is-link">Сменить пароль</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="block">
+            <div class="field">
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link is-light"><a href='/'>Отмена</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

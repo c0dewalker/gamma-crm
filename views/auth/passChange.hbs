@@ -1,0 +1,39 @@
+<div class="container has-text-centered">
+  <div class="column is-4 is-vcentered is-offset-4">
+    <div class="box">
+      <p class="subtitle is-4">Смена пароля:</p>
+      <br>
+      <form action="/auth/reset" method="POST">
+        <div class="field">
+          <p class="control has-icons-left">
+            <p>Ваш email</p>
+            <input class="input is-medium" type="email" name="email" placeholder="" required />
+            <span class="icon is-medium is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <p>Текущий пароль</p>
+            <input class="input is-medium" type="password" name="password" placeholder="" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <p>Новый пароль</p>
+            <input class="input is-medium" type="password" name="newPass" placeholder="" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <button class="button is-primary is-medium is-fullwidth">Сменить пароль</button><br>
+        <button class="button is-primary is-medium is-fullwidth"><a href='/'>Отмена</a></button><br>
+      </form>
+    </div>
+  </div>
+</div>

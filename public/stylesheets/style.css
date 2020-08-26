@@ -1,0 +1,44 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.is-300px {
+  min-width: 300px;
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.is-zero-padding {
+  background-color: transparent;
+  padding: 5px;
+}
+
+.has-text-even {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.is-comment {
+
+  position: relative;
+  max-height: 50px;
+  overflow-y: auto;
+}
+
+.card {
+  border: 1px solid grey
+}
+
+.is-narrow {
+  max-width: 190px;
+}

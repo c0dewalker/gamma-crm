@@ -1,0 +1,219 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+
+    <div class="container">
+      <div class="column">
+        <div class="box">
+
+          <form action="/edit/{{contact._id}}" method="POST">
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Имя</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input class="input" type="text" name="name" value="{{contact.name}}">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Статус</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <span class="select">
+                      <select name="status">
+                        <option value="{{someStatus}}">{{someStatus}}</option>
+                        <option value="1">неразобранное</option>
+                        <option value="2">первичный контакт</option>
+                        <option value="3">назначена встреча</option>
+                        <option value="4">встреча не состоялась</option>
+                        <option value="5">переговоры</option>
+                        <option value="6">принимают решение</option>
+                        <option value="7">согласование договора</option>
+                        <option value="8">завершенные</option>
+                      </select>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Менеджер</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input class="input" type="text" name="manager" value="{{contact.manager}}">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Бюджет</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input class="input" type="text" name="budget" value="{{contact.budget}}">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Email</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input class="input" type="email" name="email" value="{{contact.email}}">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Телефон</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input class="input" type="text" name="phone" value="{{contact.phone}}">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-phone"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Другие контакты</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input class="input" type="text" name="other" value="{{contact.other}}">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-phone"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Услуга</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <textarea class="textarea" name="service">{{contact.service}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Комментарии</label>
+              </div>
+
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <textarea class="textarea" name="comments">{{contact.comments}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Результат</label>
+              </div>
+
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <textarea class="textarea" name="result">{{contact.result}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Дата</label>
+              </div>
+
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <textarea class="textarea" name="date">{{contact.date}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Источник</label>
+              </div>
+
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <textarea class="textarea" name="source">{{contact.source}}</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <button type="submit" class="button is-link">Изменить</button>
+                  </div>
+                  <div class="control">
+                    <a href="/delete/{{contact._id}}" class="button is-link">Удалить</a>
+                  </div>
+                  <div class="control">
+                    <button href="/" class="button is-link is-light">Отмена</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
